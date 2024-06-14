@@ -19,6 +19,8 @@ const connect = function() {
     // send name to the server
     conn.write('Move: up')
   });
+
+ 
   
   /* Using Interval
   set up the interval
