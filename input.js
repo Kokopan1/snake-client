@@ -1,8 +1,4 @@
 
-const connect = require("./client"); // .client is the file path
-const setupInput = require("./input");
-
-
 const setupInput = function () {
 
   const stdin = process.stdin;  // create variable to hold the stdin object so we don't have to type process.stdin multiple times
@@ -22,7 +18,4 @@ const handleUserInput = function (key) {
   }
 };
 
-console.log("Connecting ...");
-connect();
-
-setupInput();
+module.exports = setupInput;
