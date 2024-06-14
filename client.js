@@ -7,15 +7,19 @@ const connect = function() {
     port: 50541,
   });
 
-  conn.on('data', (data) => {
-    console.log('Server says:', data);
-  });
-
+   
+  // Client send a Reply
   conn.on("connect", () => {
     conn.write("Hello from client!");
   });
+  
   // interpret incoming data as text
   conn.setEncoding("utf8");
+
+  //Recieving Data from Clients
+  conn.on('data', (data) => {
+    console.log('Name:ASH', data);
+  });
 
   return conn;
 };
