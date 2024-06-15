@@ -12,12 +12,12 @@ const connect = function() {
   conn.on("connect", () => {
     console.log("Successfully connectd to game server!");
     // send name to the server
-    conn.write('Name: Ash')
+    conn.write('Name: Ash');
   });
 
   conn.on("connect", () => {
     // send name to the server
-    conn.write('Move: up')
+    conn.write('Move: up');
   });
 
  
@@ -54,19 +54,19 @@ const connect = function() {
   conn.on("connect", () => {
     setTimeout(() => {
       conn.write("Move: up")
-    }, 1500)    
+    }, 1500) 
   })
 
   conn.on("connect", () => {
     setTimeout(() => {
       conn.write("Move: up")
-    }, 2000)    
+    }, 2000)  
   })
 
   conn.on("connect", () => {
     setTimeout(() => {
       conn.write("Move: up")
-    }, 2500)    
+    }, 2500)
   })
   */
 

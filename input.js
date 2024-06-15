@@ -1,7 +1,7 @@
 
 let connection;
 
-const setupInput = function (conn) {
+const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;  // create variable to hold the stdin object so we don't have to type process.stdin multiple times
 
@@ -10,7 +10,7 @@ const setupInput = function (conn) {
   stdin.resume(); // resume stdin so the program can listen for input
   
   process.stdin.on('data', (data) => {
-    if(data === 'w') {
+    if (data === 'w') {
       connection.write("Move: up");
     } else if (data === 'a') {
       connection.write("Move: left");
@@ -27,7 +27,7 @@ const setupInput = function (conn) {
 };
 
 // speficies what happens when a key is pressed on the keyboard input
-const handleUserInput = function (key) {
+const handleUserInput = function(key) {
   if (key === "\u0003") {
     process.exit();
   }
