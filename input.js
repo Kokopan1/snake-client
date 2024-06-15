@@ -3,12 +3,21 @@ let connection;
 
 const setupInput = function(conn) {
   connection = conn;
-  const stdin = process.stdin;  // create variable to hold the stdin object so we don't have to type process.stdin multiple times
 
-  stdin.setRawMode(true); // Raw Mode allows us to listen for individual keypresses instead of waiting for the user to press enter
-  stdin.setEncoding("utf8"); // utf8 encoding is set so that we can read the text data that is input
-  stdin.resume(); // resume stdin so the program can listen for input
+  // create variable to hold the stdin object so we don't have to type process.stdin multiple times
+  const stdin = process.stdin;
+
+  // Raw Mode allows us to listen for individual keypresses instead of waiting for the user to press enter
+  stdin.setRawMode(true);
+
+  // utf8 encoding is set so that we can read the text data that is input
+  stdin.setEncoding("utf8");
+
+  // resume stdin so the program can listen for input
+  stdin.resume();
+
   
+  //Movement Keys
   process.stdin.on('data', (data) => {
     if (data === 'w') {
       connection.write("Move: up");
@@ -21,17 +30,20 @@ const setupInput = function(conn) {
     }
   
 
-  //Special Key g Say
-  process.stdin.on('data', (data) => {
-    if (data === 'g') {
-    connection.write("Say: GO!")
-    }
-  })
+    //Special Key Speech Bubbles
+    process.stdin.on('data', (data) => {
+      if (data === 'g') {
+        connection.write("Say: GO!");
+      } else if (data === 'f') {
+        connection.write("Say: Fun");
+      }
+    });
 
   });
   stdin.on("data", handleUserInput);
 
-  return stdin;   // return the stdin object so we can use it elsewhere in the program
+  // return the stdin object so we can use it elsewhere in the program
+  return stdin;
 };
 
 // speficies what happens when a key is pressed on the keyboard input
@@ -43,5 +55,5 @@ const handleUserInput = function(key) {
 
 
 
-
+// exports function
 module.exports = setupInput;

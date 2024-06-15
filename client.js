@@ -15,69 +15,8 @@ const connect = function() {
     // send name to the server
     conn.write('Name: Ash');
   });
-
-  /*
-  conn.on("connect", () => {
-    // send name to the server
-    conn.write('Move: up');
-  });
-
- */
   
-  /* Using Interval
-  set up the interval
-  conn.on("connect", () => {
 
-    conn.write("Move: up")
-
-    setInterval(() => {
-      conn.write("Move: up")
-    }, 1000)
-  });
-  // stop the interval
-*/
-
-
-
-  /* using setTimeout
-  conn.on("connect", () => {
-    // send name to the server
-    conn.write("Move: up")
-
-    // We nested it here but we could also create a new conn.on
-    setTimeout(() => {
-      conn.write("Move: up")
-    }, 1000)
-  });
-  */
-  
-  
-  /* using setTimeout to move snake
-  conn.on("connect", () => {
-    setTimeout(() => {
-      conn.write("Move: up")
-    }, 1500) 
-  })
-
-  conn.on("connect", () => {
-    setTimeout(() => {
-      conn.write("Move: up")
-    }, 2000)  
-  })
-
-  conn.on("connect", () => {
-    setTimeout(() => {
-      conn.write("Move: up")
-    }, 2500)
-  })
-  */
-
-  /*
-conn.on("connect", () => {
-    setTimeout ( () => {
-      conn.write("Move: up")
-    }, 1000)
-  */
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
@@ -91,3 +30,45 @@ conn.on("connect", () => {
 
 
 module.exports = connect;
+
+
+// ===== IGNORE CODE BEYOND THIS POINT =====
+
+
+/* === Alternative Code Option Snippet: Using Intervals to Move Snake ===
+set up the interval
+conn.on("connect", () => {
+
+  conn.write("Move: up")
+
+  setInterval(() => {
+    conn.write("Move: up")
+  }, 1000)
+});
+*/
+
+
+
+/* === Alternative Code Option Snippet: Using setTimeout to Move Snake ===
+conn.on("connect", () => {
+  // send name to the server
+  conn.write("Move: up")
+
+  // We nested it here but we could also create a new conn.on
+  setTimeout(() => {
+    conn.write("Move: up")
+  }, 1000)
+});
+
+conn.on("connect", () => {
+  setTimeout(() => {
+    conn.write("Move: up")
+  }, 1500)
+})
+
+conn.on("connect", () => {
+  setTimeout(() => {
+    conn.write("Move: up")
+  }, 2000)
+})
+  */
