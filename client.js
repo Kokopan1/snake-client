@@ -15,12 +15,13 @@ const connect = function() {
     conn.write('Name: Ash');
   });
 
+  /*
   conn.on("connect", () => {
     // send name to the server
     conn.write('Move: up');
   });
 
- 
+ */
   
   /* Using Interval
   set up the interval

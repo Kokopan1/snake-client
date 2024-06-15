@@ -19,6 +19,14 @@ const setupInput = function(conn) {
     } else if (data  === 'd') {
       connection.write("Move: right");
     }
+  
+
+  //Special Key g Say
+  process.stdin.on('data', (data) => {
+    if (data === 'g') {
+    connection.write("Say: GO!")
+    }
+  })
 
   });
   stdin.on("data", handleUserInput);
